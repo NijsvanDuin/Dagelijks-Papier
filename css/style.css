@@ -1,0 +1,65 @@
+html {
+    font-size: 20px;
+}
+
+body {
+    height: 200vh;
+    font-family: "Raleway", sans-serif;
+}
+
+header nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+}
+
+header nav.small {
+    flex-direction: row;
+    justify-content: center;
+}
+
+header nav div#logo {
+    width: 5rem;
+    fill: #fff;
+}
+
+header nav ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+header nav ul li {
+    position: relative;
+}
+
+header nav ul li a {
+    display: block;
+    padding: 1rem;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+header nav>ul>li:hover>ul {
+    display: flex;
+}
+
+header nav>ul>li>ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    flex-direction: column;
+}
+
+header nav>ul>li>ul>li>a {
+    white-space: nowrap;
+}
