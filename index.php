@@ -16,26 +16,26 @@
             <main>
                 <section class="container">
                     <div class="row">
-                        <div class="col-12"><?php include("./navbar.php"); ?></div>
+                        <div class="col-12"><?php include_once("./navbar.php"); ?></div>
                     </div>
                 </section>
                 <section class="container">
                     <div class="row">
                         <div class="col-12 test">
-                            <?php include("./content.php"); ?>
+                            <?php include_once("./content.php"); ?>
                         </div>
                     </div>
                 </section>
                 <section class="container">
                     <div class="row">
                         <div class="col-12 test">
-                            <?php include("./footer.php"); ?>
+                            <?php include_once("./footer.php"); ?>
                         </div>
                     </div>
                 </section>
             </main>
         </div>
     </div>
+    <script src="./js/app.js"></script>
 </body>
-
 </html>

@@ -1,2 +1,2 @@
-<footer id="footer">DAAGELIJKS PAPIER INC. © </footer>
+<footer id="footer">DAGELIJKS PAPIER INC. © </footer>
 
