@@ -11,20 +11,31 @@
 </head>
 
 <body>
-    <main>
-        <section class="container">
-            <div class="row">
-                <div class="col-12"><?php include("./navbar.php"); ?></div>
-            </div>
-        </section>
-        <section class="container">
-            <div class="row">
-                <div class="col-12 test">
-                    <?php include("./content.php"); ?>
-                </div>
-            </div>
-        </section>
-    </main>
+    <div id="page-container">
+        <div id="content-wrap">
+            <main>
+                <section class="container">
+                    <div class="row">
+                        <div class="col-12"><?php include("./navbar.php"); ?></div>
+                    </div>
+                </section>
+                <section class="container">
+                    <div class="row">
+                        <div class="col-12 test">
+                            <?php include("./content.php"); ?>
+                        </div>
+                    </div>
+                </section>
+                <section class="container">
+                    <div class="row">
+                        <div class="col-12 test">
+                            <?php include("./footer.php"); ?>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
 </body>
 
 </html>

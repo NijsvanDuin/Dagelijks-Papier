@@ -1,9 +1,10 @@
 html {
     font-size: 20px;
+    height: 100%;
+    width: 100%;
 }
 
 body {
-    height: 200vh;
     font-family: "Raleway", sans-serif;
 }
 
@@ -66,4 +67,23 @@ header nav>ul>li>ul>li>a {
 
 .test {
     margin-top: 7rem;
+}
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 2.5rem;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
 }
