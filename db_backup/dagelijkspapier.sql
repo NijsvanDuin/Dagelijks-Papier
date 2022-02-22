@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 22 feb 2022 om 14:41
+-- Gegenereerd op: 22 feb 2022 om 15:23
 -- Serverversie: 5.7.31
 -- PHP-versie: 7.3.21
 
@@ -34,7 +34,15 @@ CREATE TABLE IF NOT EXISTS `register` (
   `password` varchar(60) NOT NULL,
   `userrole` enum('root','admin','customer','') NOT NULL DEFAULT 'customer',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `register`
+--
+
+INSERT INTO `register` (`id`, `email`, `password`, `userrole`) VALUES
+(3, 'nijsvanduin@gmail.com', '$2y$10$y24bRP4Z713gpU5p9vnelekiOu1yZEOULYUfRuvOhdHAicgGJkdYe', 'customer'),
+(4, 'f@f', '$2y$10$zU.UWijyG7DddUsagf3JLeokPqeD8fZhPKRqleeuoPM0pENEgm9eK', 'customer');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
