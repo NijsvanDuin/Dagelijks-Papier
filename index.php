@@ -19,7 +19,7 @@
         </section>
         <section class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 test">
                     <?php include("./content.php"); ?>
                 </div>
             </div>
