@@ -2,7 +2,6 @@
 //var_dump(headers_list()); exit;
 if (empty($_POST["email"])) {
     $alert = "no-email";
-    var_dump("0");
 } else {
     include("./connect_db.php");
     include("./functions.php");
@@ -15,7 +14,6 @@ if (empty($_POST["email"])) {
 
     if (mysqli_num_rows($result)) {
         $alert = "emailexist";
-        // var_dump("1");
     } else {
         $password = "geheim";
         $password_hash = password_hash($password, PASSWORD_BCRYPT);
@@ -45,10 +43,8 @@ if (empty($_POST["email"])) {
             mail($to,$subject,$massege,$headers);
 
             $alert = "register-succses";
-            var_dump("2");
         } else {
             $alert = "register-error";
-            var_dump("3");
         }
     
     }
