@@ -1,7 +1,8 @@
 <?php
-
+//var_dump(headers_list()); exit;
 if (empty($_POST["email"])) {
-    header("Location: ./index.php?content=massege&alert=no-email");
+    $alert = "no-email";
+    var_dump("0");
 } else {
     include("./connect_db.php");
     include("./functions.php");
@@ -13,7 +14,8 @@ if (empty($_POST["email"])) {
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result)) {
-        header("Location: ./index.php?content=massege&alert=emailexist");
+        $alert = "emailexist";
+        // var_dump("1");
     } else {
         $password = "geheim";
         $password_hash = password_hash($password, PASSWORD_BCRYPT);
@@ -23,7 +25,17 @@ if (empty($_POST["email"])) {
             $id = mysqli_insert_id($conn);
             $to = $email;
             $subject = "Activatie link voor u account bij Dagelijks Papier";
-            $massege = '';
+            $massege = '<style> .email {background-color: #e9e9e9;} </style>
+            <div class="email">
+            <h2>Beste Gebruiker</h2>
+            <p>U heeft zich geregistreert bij www.daagelijkspapier.nl.</p>
+            <p>Klik <a href="http://www.dagelijkspapier.local/index.php?content=activate&id=' . $id . '&pwh=' . $password_hash . '">hier</a> voor het activere en wijsigen van wachtwoord van uw account.</p>
+            <p>Bedankt voor het registreren!</p><br>
+            <p>Met vriendelijke groet,</p>
+            <p>N. van Duin</p>
+            <p>B. achternaam</p>
+            <p><strong>CEO Daagelijks Papier INC.</strong></p>
+            </div>';
 
             $headers = "MIME-Version: 1.0\r\n";
             $headers .= "Content-type: text/html; charset=UTF-8\r\n";
@@ -32,10 +44,15 @@ if (empty($_POST["email"])) {
 
             mail($to,$subject,$massege,$headers);
 
-            header("Location: ./index.php?content=massege&alert=register-succses");
+            $alert = "register-succses";
+            var_dump("2");
         } else {
-            header("Location: ./index.php?content=massege&alert=register-error");
+            $alert = "register-error";
+            var_dump("3");
         }
     
     }
 }
+
+header('Location:./index.php?content=massege&alert='.$alert); exit();
+?>

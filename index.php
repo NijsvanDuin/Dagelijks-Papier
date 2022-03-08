@@ -16,20 +16,22 @@
             <main>
                 <section class="container">
                     <div class="row">
-                        <div class="col-12"><?php include_once("./navbar.php"); ?></div>
-                    </div>
-                </section>
-                <section class="container">
-                    <div class="row">
-                        <div class="col-12 test">
-                            <?php include_once("./content.php"); ?>
+                        <div class="col-12">
+                        <?php include("./navbar.php");?> 
                         </div>
                     </div>
                 </section>
                 <section class="container">
                     <div class="row">
                         <div class="col-12 test">
-                            <?php include_once("./footer.php"); ?>
+                            <?php include("./content.php");?>
+                        </div>
+                    </div>
+                </section>
+                <section class="container">
+                    <div class="row">
+                        <div class="col-12 test">
+                            <?php include("./footer.php");?>
                         </div>
                     </div>
                 </section>
