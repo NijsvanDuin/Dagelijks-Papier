@@ -26,6 +26,12 @@ switch ($alert) {
         </div>';
         header("Refresh: 3; ./index.php?content=login");
         break;
+        case "hacker";
+        echo '<div class="alert-danger" role="alert">
+            U heeft geen toegang tot deze pagina(GFYS). 
+        </div>';
+        header("Refresh: 3; ./index.php?content=login");
+        break;
     default:
         header("Location: ./index.php?content=home");
         break;
