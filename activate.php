@@ -11,7 +11,7 @@
         <div class="col-12 col-sm-6">
             <form action="./index.php?content=activate_script" method="post">
                 <div class="form-group">
-                    <label for="InputPassword">Vul hier uw Nieuwe wachtwoord:</label> <br>
+                    <label for="InputPassword">Vul hier uw nieuwe wachtwoord:</label> <br>
                     <input name="email" type="password" class="form-control informReg" id="InputPassword" aria-describedby="emailHelp" placeholder="Wachtwoord">
                     <br>
                     <br>

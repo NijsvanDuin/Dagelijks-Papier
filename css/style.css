@@ -67,7 +67,7 @@ header nav>ul>li>ul>li>a {
 }
 
 .test {
-    margin-top: 5.5rem;
+    margin-top: 8.5rem;
 }
 
 #page-container {
@@ -97,6 +97,9 @@ header nav>ul>li>ul>li>a {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     padding: 30px;
+    border-radius: 25px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 
@@ -156,4 +159,8 @@ header nav>ul>li>ul>li>a {
 
 .informReg {
     width: 10rem;
+}
+
+img#logonav {
+    width: 65%;
 }
