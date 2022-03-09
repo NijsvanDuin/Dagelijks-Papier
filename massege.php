@@ -1,5 +1,7 @@
 <?php
 $alert = (isset($_GET["alert"])) ? $_GET["alert"] : "default";
+$id = (isset($_GET["id"])) ? $_GET["id"] : "";
+$pwh = (isset($_GET["password"])) ? $_GET["pwh"] : "";
 
 switch ($alert) {
     case "no-email":
@@ -26,11 +28,29 @@ switch ($alert) {
         </div>';
         header("Refresh: 3; ./index.php?content=login");
         break;
-        case "hacker";
+    case "hacker";
         echo '<div class="alert-danger" role="alert">
             U heeft geen toegang tot deze pagina(GFYS). 
         </div>';
-        header("Refresh: 3; ./index.php?content=login");
+        header("Refresh: 3; ./index.php?content=register");
+        break;
+    case "emtypass";
+        echo '<div class="alert-warning" role="alert">
+        Een van de wachtwoord velden is leeg, probeer opnieuw.... 
+        </div>';
+        header("Refresh: 3; ./index.php?content=activate&id=$id&pwh=$pwh");
+        break;
+    case "nomatchpass";
+        echo '<div class="alert-warning" role="alert">
+        Wachtwoorden zijn niet gelijk, probeer opnieuw...
+        </div>';
+        header("Refresh: 3; ./index.php?content=activate&id=$id&pwh=$pwh");
+        break;
+    case "idpqhmatch":
+        echo '<div class="alert alert-warning mt-5 w-50 mx-auto" role="alert">
+            U staat niet in onze database, u wordt doorgestuurt naar de registatiepagina...
+          </div>';
+        header("Refresh: 3; ./index.php?content=register");
         break;
     default:
         header("Location: ./index.php?content=home");

@@ -12,13 +12,13 @@
             <form action="./index.php?content=activate_script" method="post">
                 <div class="form-group">
                     <label for="InputPassword">Vul hier uw nieuwe wachtwoord:</label> <br>
-                    <input name="email" type="password" class="form-control informReg" id="InputPassword" aria-describedby="emailHelp" placeholder="Wachtwoord">
+                    <input name="password" type="password" class="form-control informReg" id="InputPassword" aria-describedby="emailHelp" placeholder="Wachtwoord">
                     <br>
                     <br>
                 </div>
                 <div class="form-group">
                     <label for="InputPassword">Vul hier uw wachtwoord opnieuw in:</label> <br>
-                    <input name="emailCheck" type="password" class="form-control informReg" id="InputPasswordCheck" aria-describedby="emailHelp" placeholder="Wachtwoord">
+                    <input name="passwordCheck" type="password" class="form-control informReg" id="InputPasswordCheck" aria-describedby="emailHelp" placeholder="Wachtwoord">
                     <br>
                 </div>
                 <input type="hidden" name="id" value="<?php echo $_GET["id"]; ?>">
