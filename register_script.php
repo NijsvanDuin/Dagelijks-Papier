@@ -15,15 +15,7 @@ if (empty($_POST["email"])) {
     if (mysqli_num_rows($result)) {
         $alert = "emailexist";
     } else {
-        $mut = microtime();
-
-        $time = explode(" ", $mut);
-        $password = $time[1] * $time[0] * 1000000;
-        $password_hash = password_hash($password, PASSWORD_BCRYPT);
-
-        $onehour = mktime(1,0,0,1,1,1970);
-        $d = date("d-m-y", ($time[1] + $onehour));
-        $t = date("H:i:s", ($time[1] + $onehour));
+        pwh_from_microtime();
 
         $sql = "INSERT INTO `register` (`id`, `email`, `password`, `userrole`) VALUES (NULL,'$email','$password_hash','customer')";
         if (mysqli_query($conn,$sql)) {
@@ -34,8 +26,8 @@ if (empty($_POST["email"])) {
             <div class="email">
             <h2>Beste Gebruiker</h2>
             <p>U heeft zich geregistreert bij www.daagelijkspapier.nl.</p>
-            <p>Klik <a href="http://www.dagelijkspapier.local/index.php?content=activate&id=' . $id . '&pwh=' . $password_hash . '">hier</a> voor het activere en wijsigen van wachtwoord van uw account.</p>
-            <p>Uw datum en tijd van registreren: '. $d . ' - '. $t .'</p><br>
+            <p>Klik <a href="http://www.dagelijkspapier.local/index.php?content=activate&id=' . $id . '&pwh=' . $array['password_hash'] . '">hier</a> voor het activere en wijsigen van wachtwoord van uw account.</p>
+            <p>Uw datum en tijd van registreren: '. $array["date"] . ' - '. $array["time"].'</p><br>
             <p>Bedankt voor het registreren!</p><br>
             <p>Met vriendelijke groet,</p>
             <p>N. van Duin</p>
