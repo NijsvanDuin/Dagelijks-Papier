@@ -64,7 +64,20 @@ switch ($alert) {
                               </div>';
         header("Refresh: 3; ./index.php?content=activate&id=$id&pwh=$pwh");
         break;
+    case "already-active":
+        echo '<div class="alert-danger" role="alert">
+                             Het account is al geactiveert....
+                              </div>';
+        header("Refresh: 3; ./index.php?content=login");
+        break;
+    case "no-match-pwh":
+        echo '<div class="alert-danger" role="alert">
+                                 De activatielinkgegevens zijn niet correct, registreer opnieuw....
+                                  </div>';
+        header("Refresh: 3; ./index.php?content=register");
+        break;
     default:
         header("Location: ./index.php?content=home");
         break;
 }
+?>

@@ -15,9 +15,9 @@ if (empty($_POST["email"])) {
     if (mysqli_num_rows($result)) {
         $alert = "emailexist";
     } else {
-        pwh_from_microtime();
+        $array = pwh_from_microtime();
 
-        $sql = "INSERT INTO `register` (`id`, `email`, `password`, `userrole`) VALUES (NULL,'$email','$password_hash','customer')";
+        $sql = "INSERT INTO `register` (`id`, `email`, `password`, `userrole`, `activated`) VALUES (NULL,'$email','{$array["password_hash"]}','customer', 0)";
         if (mysqli_query($conn,$sql)) {
             $id = mysqli_insert_id($conn);
             $to = $email;
