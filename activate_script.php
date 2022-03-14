@@ -14,8 +14,20 @@
     } else {
         $sql = "SELECT * FROM `register` WHERE `id` = '$id' AND `password` = '$pwh'";
         $result = mysqli_query($conn,$sql);
+
         if(mysqli_num_rows($result)) {
-            echo "update";
+            $password_hash = password_hash($password, PASSWORD_BCRYPT);
+            $sql = "UPDATE `register` 
+                    SET `password` = '$password_hash' 
+                    WHERE `id` = $id 
+                    AND `password` = '$pwh'";
+            if (mysqli_query($conn, $sql)) {
+                //yep
+                header("Location: ./index.php?content=massege&alert=suc-up");
+            } else {
+                header("Location: ./index.php?content=massege&alert=err-up&id=$id&pwh=$pwh");
+            }
+
         } else {
         header("Location: ./index.php?content=massege&alert=idpqhmatch");
         }
