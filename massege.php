@@ -76,6 +76,12 @@ switch ($alert) {
                                   </div>';
         header("Refresh: 3; ./index.php?content=register");
         break;
+    case "artsave":
+        echo '<div class="alert-success" role="alert">
+                                     Uw artikel is opgeslagen....
+                                      </div>';
+        header("Refresh: 3; ./index.php?content=overzicht");
+        break;
     default:
         header("Location: ./index.php?content=home");
         break;

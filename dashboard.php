@@ -1,1 +1,1 @@
-Dashboard
+<button class="btn-dash"><a href="./index.php?content=new_page">Nieuw Articel</a></button>
