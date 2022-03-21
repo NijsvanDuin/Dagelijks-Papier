@@ -99,10 +99,15 @@ switch ($alert) {
     case "non-act":
         echo '<div class="alert-danger" role="alert">
                                          Uw account is nog niet geregistreerd , Check uw mail <span class="email-mes"> '. $email . ' </span>  voor de activatie link....
-
                                                   </div>';
         header("Refresh: 3; ./index.php?content=login");
         break;
+        case "pw-and-pwh-no":
+            echo '<div class="alert-danger" role="alert">
+                                             Uw ingevoerde wachtwoord voor het email  <span class="email-mes"> '. $email . ' </span>  is niet correct, Probeer opnieuw....
+                                                      </div>';
+            header("Refresh: 3; ./index.php?content=login");
+            break;
     default:
         header("Location: ./index.php?content=home");
         break;
