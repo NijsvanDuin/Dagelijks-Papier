@@ -120,19 +120,19 @@ header nav>ul>li>ul>li>a {
 }
 
 .alert-warning {
-    background-color: rgba(255, 255, 0, 0.75);
+    background-color: rgba(255, 255, 0, 0.5);
     padding: 1rem;
     margin-top: 1rem;
 }
 
 .alert-danger {
-    background-color: rgba(255, 0, 0, 0.75);
+    background-color: rgba(255, 0, 0, 0.5);
     padding: 1rem;
     margin-top: 1rem;
 }
 
 .alert-success {
-    background-color: rgba(0, 255, 0, 0.75);
+    background-color: rgba(0, 255, 0, 0.5);
     padding: 1rem;
     margin-top: 1rem;
 }
@@ -243,4 +243,8 @@ img#logonav {
 
 .page-back {
     padding-left: 0rem;
+}
+
+.email-mes {
+    background-color: rgba(255, 0, 0, 0.75);
 }

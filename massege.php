@@ -2,6 +2,8 @@
 $alert = (isset($_GET["alert"])) ? $_GET["alert"] : "default";
 $id = (isset($_GET["id"])) ? $_GET["id"] : "";
 $pwh = (isset($_GET["password"])) ? $_GET["pwh"] : "";
+$email = (isset($_GET["email"])) ? $_GET["email"] : "";
+
 
 switch ($alert) {
     case "no-email":
@@ -81,6 +83,25 @@ switch ($alert) {
                                      Uw artikel is opgeslagen....
                                       </div>';
         header("Refresh: 3; ./index.php?content=overzicht");
+        break;
+    case "no-email-or-password":
+        echo '<div class="alert-warning" role="alert">
+                                         Een of bijde velden zijn leeg, Probeer opnieuw....
+                                          </div>';
+        header("Refresh: 3; ./index.php?content=login");
+        break;
+    case "email-un":
+        echo '<div class="alert-warning" role="alert">
+                                     Uw ingevoerde email is bij ons niet bekend, Probeer opnieuw....
+                                              </div>';
+        header("Refresh: 3; ./index.php?content=login");
+        break;
+    case "non-act":
+        echo '<div class="alert-danger" role="alert">
+                                         Uw account is nog niet geregistreerd , Check uw mail <span class="email-mes"> '. $email . ' </span>  voor de activatie link....
+
+                                                  </div>';
+        header("Refresh: 3; ./index.php?content=login");
         break;
     default:
         header("Location: ./index.php?content=home");
