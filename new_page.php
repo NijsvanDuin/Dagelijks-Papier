@@ -8,7 +8,7 @@
                         <label class="" for="inputArtikel">Artikel Text: </label><br>
                         <textarea class= "form-artikel" type="text-area" name="artikel" id="inputArtikel" required></textarea><br>
 
-                        <label class="" for="inputAuteur">Naam Auteur: </label>
+                        <label class="" for="inputAuteur">Uw Naam: </label>
                         <input class= "form-auteur" type="text" name="auteur" id="inputAuteur" placeholder="Auteur" required><br>
 
                         <input class="btn-art" type="submit" value="Verstuur" ><br>

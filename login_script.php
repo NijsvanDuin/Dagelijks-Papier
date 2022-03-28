@@ -21,6 +21,8 @@ if (empty($email) || empty($password)) {
         } elseif (!password_verify($password, $record["password"])) {
             header("Location: ./index.php?content=massege&alert=pw-and-pwh-no&email=$email");
         } else {
+            $_SESSION["id"] = $record["id"];
+            $_SESSION["userrole"] = $record["userrole"];
             switch ($record["userrole"]) {
                 case 'customer':
                     header("Location: ./index.php?content=c-home");
