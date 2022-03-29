@@ -16,13 +16,17 @@
     </ul>
     <ul>
       <?php
-      if (isset($_SESSION["id"]) AND $_SESSION["userrole"] == "root" || isset($_SESSION["id"])  AND $_SESSION["userrole"] == "write") {
+      if (isset($_SESSION["id"]) AND $_SESSION["userrole"] == "write") {
         echo '  <li><a href="./index.php?content=home">Home</a></li>
                 <li><a href="./index.php?content=overzicht">Overzicht</a></li>
                 <li><a href="./index.php?content=dashboard">Dashboard</a></li>';
       } else if (isset($_SESSION["id"])  AND $_SESSION["userrole"] == "customer"){
         echo '<li><a href="./index.php?content=home">Home</a></li>
               <li><a href="./index.php?content=overzicht">Overzicht</a></li>';
+      } else if (isset($_SESSION["id"]) AND $_SESSION["userrole"] == "root"){
+        echo '  <li><a href="./index.php?content=home">Home</a></li>
+                <li><a href="./index.php?content=overzicht">Overzicht</a></li>
+                <li><a href="./index.php?content=dashboard">Dashboard</a></li>';
       } else {
         echo '<li><a href="./index.php?content=home">Home</a></li>';
       }
