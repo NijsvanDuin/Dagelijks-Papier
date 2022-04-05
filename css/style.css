@@ -248,3 +248,32 @@ img#logonav {
 .email-mes {
     background-color: rgba(255, 0, 0, 0.75);
 }
+
+table {
+    border: 1px solid black;
+    width: 80%;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+table tr {
+    border: 1px solid black;
+}
+
+table tr td {
+    border: 1px solid black;
+    height: 50px;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(206, 206, 206, 0.8);
+}
+
+tr:nth-child(odd) {
+    background-color: rgba(119, 119, 119, 0.8);
+}
+
+a.delete-text {
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+}

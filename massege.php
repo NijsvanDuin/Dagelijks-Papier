@@ -114,6 +114,12 @@ switch ($alert) {
                                                       </div>';
         header("Refresh: 3; ./index.php?content=login");
         break;
+    case "delete-suc":
+        echo '<div class="alert-success" role="alert">
+                                                        De user is succes vol verwijderd...
+                                                          </div>';
+        header("Refresh: 3; ./index.php?content=userspage");
+        break;
     default:
         header("Location: ./index.php?content=home");
         break;
