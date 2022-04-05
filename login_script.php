@@ -25,13 +25,13 @@ if (empty($email) || empty($password)) {
             $_SESSION["userrole"] = $record["userrole"];
             switch ($record["userrole"]) {
                 case 'customer':
-                    header("Location: ./index.php?content=c-home");
+                    header("Location: ./index.php?content=home");
                     break;
                 case 'root':
-                    header("Location: ./index.php?content=r-home");
+                    header("Location: ./index.php?content=userspage");
                     break;
                 case 'write':
-                    header("Location: ./index.php?content=w-home");
+                    header("Location: ./index.php?content=dashboard");
                     break;
                 default:
                     header("Location: ./index.php?content=home");
