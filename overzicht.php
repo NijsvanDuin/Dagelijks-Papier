@@ -1,6 +1,6 @@
 <?php
     include("./connect_db.php");
-    $per_page = 3;
+    $per_page = 4;
 
     $sql = "SELECT * FROM `allartikel`" ;   
     
